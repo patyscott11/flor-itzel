@@ -234,17 +234,18 @@ function actualizarContador(){
     return;
   }
 
-  const dias = Math.floor(distancia / (1000 * 60 * 60 * 24));
-  const horas = Math.floor((distancia % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
-  const minutos = Math.floor((distancia % (1000 * 60 * 60)) / (1000 * 60));
-  const segundos = Math.floor((distancia % (1000 * 60)) / 1000);
+const dias = Math.floor(distancia / (1000 * 60 * 60 * 24));
+const horas = Math.floor((distancia % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+const minutos = Math.floor((distancia % (1000 * 60 * 60)) / (1000 * 60));
+const segundos = Math.floor((distancia % (1000 * 60)) / 1000);
 
-  contador.innerHTML =
-    dias + " días &nbsp; | &nbsp; " +
-    horas + " horas &nbsp; | &nbsp; " +
-    minutos + " min &nbsp; | &nbsp; " +
-    segundos + " seg";
+contador.innerHTML =
+  dias + "d | " +
+  horas + "h | " +
+  minutos + "m | " +
+  segundos + "s";
 }
+
 
 actualizarContador();
 setInterval(actualizarContador, 1000);
