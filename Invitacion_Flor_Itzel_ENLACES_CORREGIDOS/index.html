@@ -1,0 +1,254 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>XV Años Flor Itzel</title>
+
+<style>
+body{
+  margin:0;
+  background:#f8ecec;
+  text-align:center;
+}
+
+img{
+  width:100%;
+  display:block;
+}
+
+.boton-musica{
+  position:fixed;
+  top:15px;
+  left:15px;
+  z-index:9999;
+  background:#d4af37;
+  color:white;
+  border:none;
+  padding:12px 20px;
+  border-radius:25px;
+  font-size:16px;
+  font-weight:bold;
+  cursor:pointer;
+  box-shadow:0 4px 12px rgba(0,0,0,.18);
+}
+
+.portada{
+  position:relative;
+  overflow:hidden;
+}
+
+.portada img{
+  animation:movimientoPortada 5s ease-in-out infinite;
+}
+
+@keyframes movimientoPortada{
+  0%,100%{ transform:scale(1); }
+  50%{ transform:scale(1.015); }
+}
+
+.destellos{
+  position:absolute;
+  inset:0;
+  pointer-events:none;
+  z-index:4;
+  overflow:hidden;
+}
+
+.destellos span{
+  position:absolute;
+  width:5px;
+  height:5px;
+  border-radius:50%;
+  background:#ffe28a;
+  box-shadow:0 0 10px #ffd700, 0 0 25px #fff4b8;
+  animation:lluviaDestellos 4s linear infinite;
+}
+
+.destellos span:nth-child(1){left:12%; animation-delay:0s;}
+.destellos span:nth-child(2){left:22%; animation-delay:.7s;}
+.destellos span:nth-child(3){left:34%; animation-delay:1.2s;}
+.destellos span:nth-child(4){left:46%; animation-delay:.3s;}
+.destellos span:nth-child(5){left:58%; animation-delay:1.7s;}
+.destellos span:nth-child(6){left:70%; animation-delay:.9s;}
+.destellos span:nth-child(7){left:82%; animation-delay:1.4s;}
+.destellos span:nth-child(8){left:92%; animation-delay:.5s;}
+
+@keyframes lluviaDestellos{
+  0%{ top:-10%; opacity:0; transform:scale(.5); }
+  20%{ opacity:1; }
+  100%{ top:95%; opacity:0; transform:translateY(80px) scale(1.5); }
+}
+
+.pagina5,
+.pagina7{
+  position:relative;
+}
+
+.link-ubicacion,
+.boton-whatsapp{
+  position:absolute;
+  left:50%;
+  transform:translateX(-50%);
+  z-index:9999;
+  display:block;
+  background:transparent;
+  color:transparent;
+  border:none;
+  text-decoration:none;
+  pointer-events:auto;
+  cursor:pointer;
+  touch-action:manipulation;
+  -webkit-tap-highlight-color:rgba(212,175,55,.25);
+}
+
+/* Zonas táctiles amplias colocadas sobre los botones impresos */
+.ubicacion-iglesia{
+  top:32.4%;
+  width:64%;
+  height:74px;
+}
+
+.ubicacion-recepcion{
+  top:59.2%;
+  width:64%;
+  height:74px;
+}
+
+/* Zona táctil amplia del botón de WhatsApp en la diapositiva 7 */
+.boton-whatsapp{
+  top:41.3%;
+  width:66%;
+  height:78px;
+}
+
+#contador{
+  position:absolute;
+  top:60%;
+  left:50%;
+  transform:translateX(-50%);
+  width:72%;
+  max-width:620px;
+  background:#fffaf2;
+  border:2px solid #d4af37;
+  border-radius:35px;
+  padding:18px 20px;
+  font-family:Georgia, serif;
+  color:#9c6b08;
+  font-size:22px;
+  font-weight:bold;
+  text-align:center;
+  box-shadow:0 8px 20px rgba(0,0,0,.15);
+  z-index:10;
+  box-sizing:border-box;
+}
+
+.destellos,
+.destellos span,
+.falda,
+.brillos{
+  pointer-events:none;
+}
+
+@media (max-width:600px){
+  .boton-musica{
+    font-size:14px;
+    padding:10px 16px;
+  }
+
+  #contador{
+    width:82%;
+    font-size:15px;
+    padding:12px 10px;
+    border-radius:24px;
+  }
+
+  .ubicacion-iglesia,
+  .ubicacion-recepcion,
+  .boton-whatsapp{
+    width:72%;
+    height:58px;
+  }
+}
+</style>
+</head>
+
+<body>
+
+<audio id="musica" loop>
+  <source src="musica.mp3" type="audio/mpeg">
+</audio>
+
+<button class="boton-musica" onclick="document.getElementById('musica').play()">🎵 Música</button>
+
+<div class="portada">
+  <img src="Diapositiva1.PNG" alt="Portada Flor Itzel">
+  <div class="destellos">
+    <span></span><span></span><span></span><span></span>
+    <span></span><span></span><span></span><span></span>
+  </div>
+</div>
+
+<img src="Diapositiva2.PNG" alt="Flor Itzel">
+<img src="Diapositiva3.PNG" alt="Salmo y datos">
+<img src="Diapositiva4.PNG" alt="Ceremonia y recepción">
+
+<div class="pagina5">
+  <img src="Diapositiva5.PNG" alt="Ubicaciones">
+  <a class="link-ubicacion ubicacion-iglesia enlace-real" href="https://maps.app.goo.gl/9m3TyzpAmi3aXKUk6" data-url="https://maps.app.goo.gl/9m3TyzpAmi3aXKUk6" aria-label="Abrir ubicación de la iglesia">Ubicación iglesia</a>
+  <a class="link-ubicacion ubicacion-recepcion enlace-real" href="https://maps.app.goo.gl/YuxjkTwnvm4Q72ow5" data-url="https://maps.app.goo.gl/YuxjkTwnvm4Q72ow5" aria-label="Abrir ubicación de la recepción">Ubicación recepción</a>
+</div>
+
+<img src="Diapositiva6.PNG" alt="Vestimenta formal">
+
+<div class="pagina7">
+  <img src="Diapositiva7.PNG" alt="Confirmación de asistencia">
+  <a class="boton-whatsapp enlace-real" href="https://wa.me/526622763103?text=Hola%2C%20confirmo%20mi%20asistencia%20a%20los%20XV%20a%C3%B1os%20de%20Flor%20Itzel." data-url="https://wa.me/526622763103?text=Hola%2C%20confirmo%20mi%20asistencia%20a%20los%20XV%20a%C3%B1os%20de%20Flor%20Itzel." aria-label="Confirmar asistencia por WhatsApp">Confirmar por WhatsApp</a>
+  <div id="contador">Faltan...</div>
+</div>
+
+<img src="Diapositiva8.PNG" alt="Información adicional">
+<img src="Diapositiva9.PNG" alt="Cierre Flor Itzel">
+
+
+<script>
+document.querySelectorAll('.enlace-real').forEach(function(enlace){
+  enlace.addEventListener('click', function(event){
+    event.preventDefault();
+    const url = enlace.getAttribute('data-url') || enlace.href;
+    window.location.href = url;
+  });
+});
+</script>
+
+<script>
+const fechaEvento = new Date("2026-07-03T19:00:00-07:00").getTime();
+
+function actualizarContador(){
+  const ahora = new Date().getTime();
+  const distancia = fechaEvento - ahora;
+  const contador = document.getElementById("contador");
+
+  if(distancia <= 0){
+    contador.innerHTML = "¡Hoy es el gran día!";
+    return;
+  }
+
+  const dias = Math.floor(distancia / (1000 * 60 * 60 * 24));
+  const horas = Math.floor((distancia % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+  const minutos = Math.floor((distancia % (1000 * 60 * 60)) / (1000 * 60));
+  const segundos = Math.floor((distancia % (1000 * 60)) / 1000);
+
+  contador.innerHTML =
+    dias + " días &nbsp; | &nbsp; " +
+    horas + " horas &nbsp; | &nbsp; " +
+    minutos + " min &nbsp; | &nbsp; " +
+    segundos + " seg";
+}
+
+actualizarContador();
+setInterval(actualizarContador, 1000);
+</script>
+
+</body>
+</html>
