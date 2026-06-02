@@ -150,6 +150,23 @@ img{
   pointer-events:none;
 }
 
+
+
+/* CORRECCIÓN: zonas táctiles separadas para Misa y Recepción */
+.pagina5 .ubicacion-iglesia{
+  top:36%;
+  left:25%;
+  width:46%;
+  height:56%;
+}
+
+.pagina5 .ubicacion-recepcion{
+  top:36%;
+  left:75%;
+  width:46%;
+  height:56%;
+}
+
 @media (max-width:600px){
   .boton-musica{
     font-size:14px;
@@ -195,15 +212,15 @@ img{
 
 <div class="pagina5">
   <img src="Diapositiva5.PNG" alt="Ubicaciones">
-  <a class="link-ubicacion ubicacion-iglesia enlace-real" href="https://maps.app.goo.gl/9m3TyzpAmi3aXKUk6" data-url="https://maps.app.goo.gl/9m3TyzpAmi3aXKUk6" aria-label="Abrir ubicación de la iglesia">Ubicación iglesia</a>
-  <a class="link-ubicacion ubicacion-recepcion enlace-real" href="https://maps.app.goo.gl/YuxjkTwnvm4Q72ow5" data-url="https://maps.app.goo.gl/YuxjkTwnvm4Q72ow5" aria-label="Abrir ubicación de la recepción">Ubicación recepción</a>
+  <a class="link-ubicacion ubicacion-iglesia enlace-real" href="https://maps.app.goo.gl/9m3TyzpAmi3aXKUk6" target="_blank" rel="noopener" aria-label="Abrir ubicación de la iglesia">Ubicación iglesia</a>
+  <a class="link-ubicacion ubicacion-recepcion enlace-real" href="https://maps.app.goo.gl/YuxjkTwnvm4Q72ow5" target="_blank" rel="noopener" aria-label="Abrir ubicación de la recepción">Ubicación recepción</a>
 </div>
 
 <img src="Diapositiva6.PNG" alt="Vestimenta formal">
 
 <div class="pagina7">
   <img src="Diapositiva7.PNG" alt="Confirmación de asistencia">
-  <a class="boton-whatsapp enlace-real" href="https://wa.me/526622763103?text=Hola%2C%20confirmo%20mi%20asistencia%20a%20los%20XV%20a%C3%B1os%20de%20Flor%20Itzel." data-url="https://wa.me/526622763103?text=Hola%2C%20confirmo%20mi%20asistencia%20a%20los%20XV%20a%C3%B1os%20de%20Flor%20Itzel." aria-label="Confirmar asistencia por WhatsApp">Confirmar por WhatsApp</a>
+  <a class="boton-whatsapp enlace-real" href="https://wa.me/526622763103?text=Hola%2C%20confirmo%20mi%20asistencia%20a%20los%20XV%20a%C3%B1os%20de%20Flor%20Itzel." target="_blank" rel="noopener" aria-label="Confirmar asistencia por WhatsApp">Confirmar por WhatsApp</a>
   <div id="contador">Faltan...</div>
 </div>
 
@@ -211,18 +228,10 @@ img{
 <img src="Diapositiva9.PNG" alt="Cierre Flor Itzel">
 
 
-<script>
-document.querySelectorAll('.enlace-real').forEach(function(enlace){
-  enlace.addEventListener('click', function(event){
-    event.preventDefault();
-    const url = enlace.getAttribute('data-url') || enlace.href;
-    window.location.href = url;
-  });
-});
-</script>
+<!-- Los enlaces abren de forma natural para evitar bloqueos en celular. -->
 
 <script>
-const fechaEvento = new Date("2026-07-03T19:00:00-07:00").getTime();
+const fechaEvento = new Date("2026-07-03T18:00:00-07:00").getTime();
 
 function actualizarContador(){
   const ahora = new Date().getTime();
